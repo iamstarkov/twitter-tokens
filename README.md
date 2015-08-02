@@ -1,11 +1,14 @@
 # twitter-tokens
 
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Coveralls Status][coveralls-image]][coveralls-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
 > get twitter tokens
+
+
+Use with [twitter][tw] package. Twitter tokens is basically an object of twitter tokens exported from environment. At some point of twitter api usage I become tired to copy-pasted `tokens.js` file in a lot of my projects, so I decided to extract this file to separate npm package.
+
+[tw]: http://npmjs.org/package/twitter
 
 ## Install
 
@@ -14,30 +17,27 @@
 ## Usage
 
 ```js
-import twitterTokens from 'twitter-tokens';
+import Twitter from 'twitter';
 
-twitterTokens('unicorns'); // unicorns
+/**
+ * Before:
+const tokens = {
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+ */
+// Now:
+import tokens from 'tokens';
+
+const client = new Twitter(tokens);
+const params = { screen_name: 'nodejs' };
+client.get('statuses/user_timeline', params, (err, tweets) => {
+  if (err) throw err;
+  console.log(tweets);
+});
 ```
-
-## API
-
-### twitterTokens(input, [options])
-
-#### input
-
-*Required*  
-Type: `String`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `Boolean`  
-Default: `false`
-
-Lorem ipsum.
 
 ## License
 
@@ -45,12 +45,6 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 
 [npm-url]: https://npmjs.org/package/twitter-tokens
 [npm-image]: https://img.shields.io/npm/v/twitter-tokens.svg?style=flat-square
-
-[travis-url]: https://travis-ci.org/iamstarkov/twitter-tokens
-[travis-image]: https://img.shields.io/travis/iamstarkov/twitter-tokens.svg?style=flat-square
-
-[coveralls-url]: https://coveralls.io/r/iamstarkov/twitter-tokens
-[coveralls-image]: https://img.shields.io/coveralls/iamstarkov/twitter-tokens.svg?style=flat-square
 
 [depstat-url]: https://david-dm.org/iamstarkov/twitter-tokens
 [depstat-image]: https://david-dm.org/iamstarkov/twitter-tokens.svg?style=flat-square
