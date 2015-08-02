@@ -29,7 +29,7 @@ const tokens = {
 });
  */
 // Now:
-import tokens from 'tokens';
+import tokens from 'twitter-tokens';
 
 const client = new Twitter(tokens);
 const params = { screen_name: 'nodejs' };
