@@ -5,10 +5,12 @@
 
 > get twitter tokens
 
+Use with [twitter][tw1] or [twit][tw2] package. Twitter tokens is basically
+an object of twitter tokens exported from environment.
+At some point of twitter api usage I become tired to copy-pasted `tokens.js`
+file in a lot of my projects, so I decided to extract this file to separate npm package.
 
-Use with [twitter][tw] package. Twitter tokens is basically an object of twitter tokens exported from environment. At some point of twitter api usage I become tired to copy-pasted `tokens.js` file in a lot of my projects, so I decided to extract this file to separate npm package.
-
-[tw]: http://npmjs.org/package/twitter
+You need to get [Twitter API tokens][how-to-get] first to be able to use this package.
 
 ## Install
 
@@ -17,17 +19,17 @@ Use with [twitter][tw] package. Twitter tokens is basically an object of twitter
 ## Usage
 
 ```js
-import Twitter from 'twitter';
+import Twitter from 'twitter'; // or 'twit'. it works with both of them
 
-/**
- * Before:
+/* Before:
 const tokens = {
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  consumer_key:        process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret:     process.env.TWITTER_CONSUMER_SECRET,
+  access_token:        process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_key:    process.env.TWITTER_ACCESS_TOKEN_KEY,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
- */
+}); */
+
 // Now:
 import tokens from 'twitter-tokens';
 
@@ -38,6 +40,10 @@ client.get('statuses/user_timeline', params, (err, tweets) => {
   console.log(tweets);
 });
 ```
+
+[tw1]: http://npmjs.org/package/twitter
+[tw2]: http://npmjs.org/package/twit
+[how-to-get]: https://iamstarkov.com/get-twitter-tokens/
 
 ## License
 
