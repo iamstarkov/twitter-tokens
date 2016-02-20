@@ -45,6 +45,16 @@ client.get('statuses/user_timeline', params, (err, tweets) => {
 [tw2]: http://npmjs.org/package/twit
 [how-to-get]: https://iamstarkov.com/get-twitter-tokens/
 
+## Related
+
+* [get-tweets][get-tweets] — get latest tweets
+* [get-twitter-info][get-twitter-info] — get info about target username
+* [get-twitter-followers][get-twitter-followers] — get followers for target username
+* [tweet-links][tweet-links] — extract links from tweet
+* [tweets-stats][tweets-stats] — get statistics from array of tweets
+* [twitter-mentions][twitter-mentions] — get latest mentions for target username
+* [twitter-profile-media][twitter-profile-media] — get twitter profile image and banner
+
 ## License
 
 MIT © [Vladimir Starkov](https://iamstarkov.com)
@@ -54,3 +64,11 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 
 [depstat-url]: https://david-dm.org/iamstarkov/twitter-tokens
 [depstat-image]: https://david-dm.org/iamstarkov/twitter-tokens.svg?style=flat-square
+
+[get-tweets]: https://github.com/iamstarkov/get-tweets
+[get-twitter-info]: https://github.com/iamstarkov/get-twitter-info
+[get-twitter-followers]: https://github.com/iamstarkov/get-twitter-followers
+[tweet-links]: https://github.com/iamstarkov/tweet-links
+[tweets-stats]: https://github.com/iamstarkov/tweets-stats
+[twitter-mentions]: https://github.com/iamstarkov/twitter-mentions
+[twitter-profile-media]: https://github.com/andrepolischuk/twitter-profile-media
