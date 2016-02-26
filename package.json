@@ -1,6 +1,6 @@
 {
   "name": "twitter-tokens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "get twitter tokens",
   "main": "index.es5.js",
   "scripts": {
