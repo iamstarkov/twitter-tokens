@@ -1,5 +1,7 @@
 # twitter-tokens
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iamstarkov/twitter-tokens.svg)](https://greenkeeper.io/)
+
 [![NPM version][npm-image]][npm-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
